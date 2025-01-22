@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the shared CSS file -->
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content">
+        <div class="logo-container">
+            <h1 class="title">Login Page</h1>
+            <div class="login-form">
+                <input autocomplete="off" type="text" id="usernameInput" placeholder="Enter username" class="input-field">
+                <input type="password" id="passwordInput" placeholder="Enter password" class="input-field">
+                <button id="loginButton" class="button">Log in</button>
+                <p id="statusMessage" class="status-message"></p>
+            </div>
+        </div>
+        <div class="account-container">
+          <button class="icon-button" onclick="window.location.href='../'">
+              <img id="icon" src="left.png" alt="Icon">
+          </button>
+      </div>
+    </div>
+
+    <script src="login.js"></script> <!-- Link to the login.js script -->
+</body>
+</html>

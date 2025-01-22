@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCA</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="background"></div>
+    <div id="loadingScreenBg"></div>
+    <div id="loadingScreen">
+        <h1>Unpacking Messages...</h1>
+        <div id="loadingBarContainer">
+            <div id="loadingBar"></div>
+        </div>
+    </div>
+    <div id="errorMessage">Connection Failed. Please try again later.</div>
+    <div id="sidebar">
+        <a href="#" id="accountLink">Account</a>
+        <a href="#" id="reconnectLink">Reconnect</a>
+        <a href="#" id="spamMessagesLink">Spam Messages</a>
+    </div>
+    <div id="mainContent">
+        <div id="messageContainer"></div>
+        <form id="messageForm">
+            <input autocomplete="off" type="text" id="messageInput" placeholder="Send a message">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

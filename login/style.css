@@ -1,0 +1,173 @@
+/* Shared styles for both login and main page */
+
+@font-face {
+  font-family: 'Panton';
+  src: url('../font2.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PantonBold';
+  src: url('../font.ttf') format('truetype');
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../bg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+  transform: scale(1.1);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 2.3em;
+  margin: 10px 0;
+  font-family: 'PantonBold', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255); /* Make text grey */
+  width: 200px;
+  text-align: center;
+  outline: none; /* Remove the default focus effect */
+  transition: border-color 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.686); /* Make placeholder text grey */
+}
+
+.input-field:focus {
+  border-color: rgba(255, 255, 255, 0.4); /* Optional: Change border color when focused */
+}
+
+.button {
+  padding: 10px 30px;
+  font-size: 1.04em;
+  color: white;
+  background: rgba(255, 255, 255, 0.072);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Panton', Arial, sans-serif;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.status-message {
+  color: white;
+  font-size: 1em;
+  margin-top: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.status-message.visible {
+  opacity: 1;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Back Button styles */
+.back-button-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.icon-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.072);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.icon-button span {
+  color: white;
+  font-size: 0.9em;
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+  padding-right: 5px;
+}
+
+.icon-button img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  padding-left: 1.5px;
+  transform: scale(1.2)
+}
+
+
+.icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

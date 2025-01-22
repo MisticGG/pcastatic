@@ -1,0 +1,254 @@
+@font-face {
+  font-family: 'gg sans';
+  src: url('../whitneymedium.ttf') format('truetype');
+}
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'gg sans';
+  color: #ffffff;
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../bg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+  transform: scale(1.1);
+}
+
+/* Sidebar Styling */
+#sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 2px solid #ffffff39;
+}
+
+#sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'gg sans';
+  transition: color 0.3s ease;
+  letter-spacing: 2px;
+  text-shadow: rgba(255,255,255,0.1) 0px 0px 10px;
+  transition: text-shadow 0.25s ease;
+}
+
+#sidebar a:hover {
+  color: #ffffff;
+  text-shadow: rgba(255,255,255,0.95) 0px 0px 35px;
+}
+
+/* Main Content Styling */
+#mainContent {
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: calc(100% - 250px); /* Adjust for sidebar */
+  height: 100vh; /* Fill the viewport height */
+}
+
+/* Message Container */
+#messageContainer {
+  background: rgba(255, 255, 255, 0.1); /* Or any background you prefer */
+  flex-grow: 1; /* Let it expand in a flex layout */
+  overflow-y: auto; /* Enable vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Messages stack from the top */
+  height: calc(100vh - 100px); /* Adjust this height based on layout */
+  scrollbar-width: auto; /* For Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.035) transparent;
+
+  /* For WebKit browsers (Chrome, Edge, Safari) */
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+
+#messageContainer.light-theme {
+  background: #f9f9f9;
+}
+
+/* Message container */
+#messageContainer .message {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.05); /* Optional background for each message */
+  transition: background 0.3s;
+}
+
+#messageContainer .message:hover {
+  background: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+}
+
+/* Username styling */
+#messageContainer .username {
+  font-family: 'Arial', sans-serif; /* Change to your preferred font */
+  font-weight: bold;
+  color: #ffcc00; /* Customize the color */
+  margin-bottom: 3px;
+  font-size: 1.05em;
+}
+
+/* Message text styling */
+#messageContainer .message-text {
+  font-family: 'Courier New', monospace; /* Change to your preferred font */
+  color: #ffffff; /* Customize the color */
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+
+/* Form Styling */
+form {
+  display: flex;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 2px solid #ffffff39;
+}
+
+form input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255); /* Make text grey */
+  width: 200px;
+  outline: none; /* Remove the default focus effect */
+  transition: border-color 0.3s ease;
+  margin-right: 5px;
+}
+form input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.554); /* Make text grey */
+}
+form button {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  background: rgba(255, 255, 255, 0.072);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Panton', Arial, sans-serif;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+form button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Error Message */
+#errorMessage {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+#loadingScreenBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../bg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: 2;
+  transform: scale(1.1);
+}
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+#loadingScreen.fade-out {
+  opacity: 0;
+}
+
+#loadingScreen h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'PantonBold', Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Loading Bar */
+#loadingBarContainer {
+  width: 70%;
+  height: 20px;
+  background: #ffffff40;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#loadingBar {
+  width: 0%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s;
+  border-radius: 10px;
+}
